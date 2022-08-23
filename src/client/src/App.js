@@ -4,7 +4,7 @@ import './App.css';
 import { client } from './main';
 import Nav from './Components/Nav';
 import { NavLink, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import '../src/styles/main.css'
 import Blogs from './Components/Blogs';
 import Author from './Components/Author';
@@ -24,23 +24,17 @@ function App() {
   const [navItems, setNavItems] = useState({});
 
 
+  const fetchMyAPI = async () => {
+    let response = await fetch('http://localhost:3000/api/blogs')
+    response = await response.json()
+    console.log(response)
+    setArticles(response);
+    setNewArticles(response);
+  };
+
   useEffect(() => {
-    client.getEntries().then(function (entries) {
-      console.log(entries)
-      setArticles(entries.items);
-      setNewArticles(entries.items);
-    
-    });
-
+    fetchMyAPI()
   }, [])
-
-  // useEffect(() => {
-  //   axios.get("http://localhost:3000/api/blogs").then((res) => {
-  //     setArticles(res.data);
-  //     setNewArticles(res.data);
-  //   })
-  //   .catch((error) => console.log(error));
-  // })
 
 
   useEffect(() => {
@@ -50,7 +44,7 @@ function App() {
         //if query is empty
         console.log("empty")
         return setNewArticles(articles)
-      } else if (post.fields.name.toLowerCase().includes(query.toLowerCase()) || post.fields.author.toLowerCase().includes(query.toLowerCase())) {
+      } else if (post.title.toLowerCase().includes(query.toLowerCase()) || post.author.toLowerCase().includes(query.toLowerCase())) {
         array.push(post);
         return setNewArticles(array)
       }
@@ -65,8 +59,8 @@ function App() {
     const authors = new Set();
     const blogTypes = new Set();
     articles.forEach(article => {
-      authors.add(article.fields.author);
-      blogTypes.add(article.fields.blogtype);
+      authors.add(article.author);
+      blogTypes.add(article.blogtype);
     });
     navbarItems.authors = [...authors];
     navbarItems.blogTypes = [...blogTypes];

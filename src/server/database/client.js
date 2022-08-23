@@ -1,8 +1,9 @@
 
 const { Pool } = require("pg");
 
+
 const { ELEPHANT_SQL_CONNECTION_STRING } = process.env;
-'use strict';
+
 
 //creates a new instance of the pool that connects server and db instance on ElpehantSQL
 const pool = new Pool({
