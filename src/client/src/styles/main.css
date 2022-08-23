@@ -1,0 +1,20 @@
+.doneButton {
+    display: none;
+}
+
+.undoButton {
+    
+}
+
+.textStrike{
+    text-decoration:line-through;
+}
+u {
+    text-decoration: none;
+}
+
+.main-container {
+    height: 30vh;
+    width: 30vh;
+    color: black
+}
