@@ -25,7 +25,7 @@ function App() {
 
 
   const fetchMyAPI = async () => {
-    let response = await fetch('http://localhost:3000/api/blogs')
+    let response = await fetch('http://localhost:3005/api/blogs')
     response = await response.json()
     console.log(response)
     setArticles(response);
