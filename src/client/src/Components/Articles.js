@@ -11,7 +11,8 @@ const Articles = ({ articles }) => {
                             <div className="card card-top hover-card m-0">
                                 {/* <img className="card-img-top" src={article.fields.featuredImage.fields.file.url} alt="Bologna" /> */}
                                 <div>
-                                    <a href="#" className="btn btn-light btn-sm">{article.blogtype}</a>
+                                    <a href={`/blogtypes/${article.blogtype}`} className="btn btn-light btn-sm">{article.blogtype}</a>
+                                    {/* <Link to={`/articles/${article.id}`} className="btn btn-info mt-3">Read Blog</Link> */}
                                 </div>
 
                                 <div className="card-body">
@@ -19,12 +20,12 @@ const Articles = ({ articles }) => {
                                         <h4 className="card-title">{article.title}</h4>
                                         <p className="card-text p-height">{article.heading}</p>
                                         <span className="author card-link"><i>Written by </i>
-                                            <Link to={article.author} className="text-decoration-none">{article.author}</Link>
+                                            <Link to={`/authors/${article.author}`} className="text-decoration-none">{article.author}</Link>
                                         </span> <br />
 
-                                        {/* <div>
-                                            <Link to={`/articles/${article.sys.id}`} className="btn btn-info mt-3">Read Blog</Link>
-                                        </div> */}
+                                        <div>
+                                            <Link to={`/articles/${article.id}`} className="btn btn-info mt-3">Read Blog</Link>
+                                        </div>
                                     </div>
                                 </div>
 

@@ -5,7 +5,7 @@ const Blogs = ({ articles }) => {
     const { blogtype } = useParams();
 
     console.log(blogtype);
-    const clickedArticle = articles?.find((article) => article.fields.blogtype === blogtype);
+    const clickedArticle = articles?.find((article) => article.blogtype === blogtype);
     console.log(clickedArticle)
     return (
         <>

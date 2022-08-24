@@ -10,14 +10,14 @@ const Categories = ({navItems}) => {
     return (
             // <div className="container-fluid">
             <div className="row">
-                  <div className="col-6">   
+                  <div className="col-12">   
                         <Dropdown>
                             <Dropdown.Toggle variant="Info" id="dropdown-basic">
                                 Blog Types
                             </Dropdown.Toggle>
                             <Dropdown.Menu menuVariant="Info">
-                                {blogTypes?.map((blogType, index) => 
-                                    <Dropdown.Item href={`/blogtypes/${blogType}`} key={index}>{blogType}</Dropdown.Item>
+                                {blogTypes?.map((blogtype, index) => 
+                                    <Dropdown.Item href={`/blogtypes/${blogtype}`} key={index}>{blogtype}</Dropdown.Item>
                                 )}
                             
                             </Dropdown.Menu>
