@@ -82,7 +82,7 @@ function App() {
         <Route path='/' element={<Articles articles={newArticles} />} />
         <Route path='articles' element={<Articles articles={newArticles} />} />
 
-        <Route path='articles/:id' element={<Article articles={newArticles} />} />
+        <Route path='articles/:id' element={<Article articles={articles} />} />
 
         <Route path='authors' element={<Author articles={articles} />} />
 
