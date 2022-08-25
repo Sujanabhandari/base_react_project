@@ -9,7 +9,6 @@ const BlogTypes_Card = ({ articles }) => {
     const { type_name } = useParams();
 
     const filteredArticles = articles?.filter((article) => article.blogtype === type_name);
-    console.log(filteredArticles)
 
     return (
         <>

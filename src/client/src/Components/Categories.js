@@ -15,7 +15,7 @@ const Categories = ({navItems}) => {
                             <Dropdown.Toggle variant="Info" id="dropdown-basic">
                                 Blog Types
                             </Dropdown.Toggle>
-                            <Dropdown.Menu menuVariant="Info">
+                            <Dropdown.Menu menuvariant="Info">
                                 {blogTypes?.map((blogtype, index) => 
                                     <Dropdown.Item href={`/blogtypes/${blogtype}`} key={index}>{blogtype}</Dropdown.Item>
                                 )}
@@ -26,7 +26,7 @@ const Categories = ({navItems}) => {
                             <Dropdown.Toggle variant="Info" id="dropdown-basic">
                                 Authors
                             </Dropdown.Toggle>
-                            <Dropdown.Menu menuVariant="Info">
+                            <Dropdown.Menu menuvariant="Info">
                                 {authors?.map((author, index) => 
                                     <Dropdown.Item href={`/authors/${author}`} key={index}>{author}</Dropdown.Item>
                                     // <Dropdown.Item key={index}><p><Link className="text-decoration-none text-dark" to={`/authors/${author}`}>{author}</Link></p></Dropdown.Item>

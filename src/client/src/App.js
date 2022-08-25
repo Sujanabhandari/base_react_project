@@ -27,7 +27,6 @@ function App() {
   const fetchMyAPI = async () => {
     let response = await fetch('http://localhost:3005/api/blogs')
     response = await response.json()
-    console.log(response)
     setArticles(response);
     setNewArticles(response);
   };
@@ -42,7 +41,6 @@ function App() {
     articles.filter(post => {
       if (query === "") {
         //if query is empty
-        console.log("empty")
         return setNewArticles(articles)
       } else if (post.title.toLowerCase().includes(query.toLowerCase()) || post.author.toLowerCase().includes(query.toLowerCase())) {
         array.push(post);

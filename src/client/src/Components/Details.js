@@ -10,7 +10,6 @@ const Details = ({ articles }) => {
   
 
     const filteredArticles = articles?.filter((article) => article.author === author_name);
-    console.log(filteredArticles)
 
     return (
         <>

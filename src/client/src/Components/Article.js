@@ -1,15 +1,11 @@
 import { useParams, Link, Outlet } from "react-router-dom";
 
 const Article = ({ articles }) => {
-  console.log("ARITICLE", articles);
   const { id } = useParams();
-  console.log(id)
   const clickedArticle = articles?.find((article) => 
     article.id == id
   );
-  console.log(clickedArticle);
  
-
   return (
     <>
       <div className="container" >

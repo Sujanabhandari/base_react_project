@@ -1,7 +1,6 @@
 import { useParams, Link, Outlet } from "react-router-dom";
 
 const Articles = ({ articles }) => {
-    console.log("From component", articles)
     return (
         <>
             <div className="container">
@@ -9,10 +8,9 @@ const Articles = ({ articles }) => {
                     {articles?.map((article, index) =>
                         <div className="col-12 col-md-6 col-lg-4 hover-div b- mb-3" key={index}>
                             <div className="card card-top hover-card m-0">
-                                {/* <img className="card-img-top" src={article.fields.featuredImage.fields.file.url} alt="Bologna" /> */}
+                                <img className="card-img-top" src={article.img_path} alt="Bologna" />
                                 <div>
                                     <a href={`/blogtypes/${article.blogtype}`} className="btn btn-light btn-sm">{article.blogtype}</a>
-                                    {/* <Link to={`/articles/${article.id}`} className="btn btn-info mt-3">Read Blog</Link> */}
                                 </div>
 
                                 <div className="card-body">
